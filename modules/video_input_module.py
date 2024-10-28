@@ -19,32 +19,12 @@ def display_video_input():
 
         # Left column: DoT camera selection and search
         with col1:
-            # Custom CSS to adjust font size
-            st.markdown(
-                """
-                <style>
-                .small-title {
-                    font-size: 24px; /* Adjust the size as needed */
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
-            # Apply the custom CSS class to the title
-            st.markdown('<h3 class="small-title">DoT Camera Selection</h3>', unsafe_allow_html=True)
-
+            st.subheader("DoT Camera Selection")
             dot_city = st.selectbox(
                 "Select DoT State:",
                 ["", "New York State DoT"],  # Currently, only New York State DoT is available
                 index=0
             )
-            
-            # st.title("DoT Camera Selection")
-            # dot_city = st.selectbox(
-            #     "Select DoT State:",
-            #     ["", "New York State DoT"],  # Currently, only New York State DoT is available
-            #     index=0
-            # )
 
             # Ensure the user has selected a valid option before proceeding
             if dot_city:
@@ -105,7 +85,7 @@ def display_video_input():
                     # recording_info = stream_process.save_video_from_stream(duration_seconds=20)
                     recording_info = fake_save_video_stream(duration_seconds=10)  # for the demo purpose
                     st.write(recording_info)
-                    st.success("Frames successfully extracted, and metadata saved. (Simulated process for a 20-second video, including frame extraction and featuer embedding)")
+                    st.success("Simulated process completed: saved a 20-second video from stream, extracted frames, and generated feature embeddings.")
                     
                 # Button to start accident monitoring
                 if st.button("Start Accident Monitoring"):
