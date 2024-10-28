@@ -105,7 +105,7 @@ def display_video_input():
                     # recording_info = stream_process.save_video_from_stream(duration_seconds=20)
                     recording_info = fake_save_video_stream(duration_seconds=10)  # for the demo purpose
                     st.write(recording_info)
-                    st.success("Frames extracted and Metadata saved (simulated)")
+                    st.success("Frames successfully extracted, and metadata saved. (Simulated process for a 20-second video, including frame extraction and featuer embedding)")
                     
                 # Button to start accident monitoring
                 if st.button("Start Accident Monitoring"):
