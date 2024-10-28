@@ -11,7 +11,7 @@ st.set_page_config(layout="wide")
 # Adding Button allowing to return to the Main site
 home_url = "https://sites.google.com/berkeley.edu/ucberkely-caliber/mvp-demo"
 if st.button("Return to Our Main Website"):
-    st.write(f'<meta http-equiv="refresh" content="0; url={home_url}">', unsafe_allow_html=True)
+    st.write(f'<meta http-equiv="refresh" content="0; url={home_url}">', unsafe_allow_html=False)
 
 # Initialize session state to track API key submission
 if 'api_key_submitted' not in st.session_state:
